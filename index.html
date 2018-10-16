@@ -2,27 +2,28 @@
 
 <head>
 	<title>Hi</title>
-	<meta charset="UTF-8" />
+	<style>
+		body,
+		html {
+			font-family: "Myriad Pro", "Segoe UI", "Calibri";
+			background-color: #eee;
+		}
+		#app {
+			max-width: 900px;
+			margin: 24px auto;
+		}
+	</style>
 </head>
 
 <body>
-	<script src="https://unpkg.com/vue"></script>
-	<script src="https://unpkg.com/chart.js@2.7.2/dist/Chart.bundle.js"></script>
-	<script src="https://unpkg.com/vue-chartkick@0.4.0"></script>
+	<div id="app" class='container'>
+		<h1>Hello Week 9</h1>
+		<p>Yen Ter here. </p>
+		<p> Look at my handsum friend</p>
+		<img src='https://avatars3.githubusercontent.com/u/22329057?s=460&v=4' width=20px>
 
-	<div id="app">
-		<br> What did I eat this month?
-		{{foodData}}
-		<pie-chart :data="foodData"></pie-chart>
+		<p style='border: 1px solid black'>Pull request to add box</p>
 	</div>
-	<script>
-		var app = new Vue({
-	    el: "#app",
-	    data: {
-				foodData: [['Green Curry', 2], ['Korean', 1], ['Jap', 1], ['Chinese Noodles',8]]
-	    }
-		})
-	</script>
 </body>
 
 </html>
