@@ -23,7 +23,37 @@
 		<img src='https://avatars3.githubusercontent.com/u/22329057?s=460&v=4' width=20px>
 
 		<p style='border: 1px solid black'>Pull request to add box</p>
+		<br> Line chart
+		<button v-for="(item,index) in chartData" @click="inc(index)">{{item[0]}}</button>
+		<line-chart :data="chartData"></line-chart>
 	</div>
+
+	<script>
+		var app = new Vue({
+	    el: "#app",
+	    data: {
+	      chartData: [['Sun', 32], ['Mon', 46], ['Tue', 28]],			
+	    },
+			methods:{
+				add: function(index){
+					this.barData[index][1]++
+					// It seems you have to mutate the list to force a re-render. 
+					this.barData.push([1,1])
+					this.barData.pop()
+				}, 
+				inc: function(index){ 
+					this.chartData[index][1]++ 
+					// It seems you have to mutate the list to force a re-render. 
+					this.chartData.push([1,1]) 
+				  this.chartData.pop() 
+					},
+				inc: function(index){ 
+					 this.foodData[index][1]++ // It seems you have to mutate the list to force a re-render. 
+					 this.foodData.push([1,1])
+					 this.foodData.pop() }
+				}
+		})
+	</script>
 </body>
 
 </html>
